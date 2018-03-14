@@ -1,0 +1,611 @@
+{
+	"info": {
+		"name": "Test_A3",
+		"_postman_id": "20b27da1-54f7-9f34-68fc-d290e7d96364",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signup (New User)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "new",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "user",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/signup",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"signup"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "signup (User Already Exists)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "new",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "user",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/signup",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"signup"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "signin (Success)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "new",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "user",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/signin",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"signin"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "signin (Fail)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhYThiMjAzNDc1ZGVhMDAwNDI2MDM1MCIsInVzZXJuYW1lIjoibmV3IiwiaWF0IjoxNTIxMDA1MTU0fQ.R35fPwCVKRJiHgoUQcHcWGZRKe2gffuTdjuViXd4NtA",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "new",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "nope",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/signin",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"signin"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Save_Movie1 (Success)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhYThiMjAzNDc1ZGVhMDAwNDI2MDM1MCIsInVzZXJuYW1lIjoibmV3IiwiaWF0IjoxNTIxMDA1MTU0fQ.R35fPwCVKRJiHgoUQcHcWGZRKe2gffuTdjuViXd4NtA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\r\n\t\"title\": \"Ant-Man\",\r\n\t\"YearReleased\": 2015,\r\n\t\"genre\": \"Action\",\r\n\t\"actors\": \r\n\t[\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Paul Rudd\", \r\n\t\t\t\"CharacterName\": \"Scott Lang/ Ant-Man\"\r\n\t\t},\r\n\t\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Evangeline Lilly\", \r\n\t\t\t\"CharacterName\": \"Hope van Dyne\"\r\n\t\t},\r\n\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Bobby Cannavale\", \r\n\t\t\t\"CharacterName\": \"Paxton\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/movies",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Save_Movie1 (Fail: Actors < 3)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhYThiMjAzNDc1ZGVhMDAwNDI2MDM1MCIsInVzZXJuYW1lIjoibmV3IiwiaWF0IjoxNTIxMDA1MTU0fQ.R35fPwCVKRJiHgoUQcHcWGZRKe2gffuTdjuViXd4NtA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\r\n\t\"title\": \"Ant-Man\",\r\n\t\"YearReleased\": 2015,\r\n\t\"genre\": \"Action\",\r\n\t\"actors\": \r\n\t[\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Paul Rudd\", \r\n\t\t\t\"CharacterName\": \"Scott Lang/ Ant-Man\"\r\n\t\t},\r\n\t\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Evangeline Lilly\", \r\n\t\t\t\"CharacterName\": \"Hope van Dyne\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/movies",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Save_Movie1 (Fail: Missing Info)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhYThiMjAzNDc1ZGVhMDAwNDI2MDM1MCIsInVzZXJuYW1lIjoibmV3IiwiaWF0IjoxNTIxMDA1MTU0fQ.R35fPwCVKRJiHgoUQcHcWGZRKe2gffuTdjuViXd4NtA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\r\n\t\"title\": \"\",\r\n\t\"YearReleased\": 2015,\r\n\t\"genre\": \"Action\",\r\n\t\"actors\": \r\n\t[\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Paul Rudd\", \r\n\t\t\t\"CharacterName\": \"Scott Lang/ Ant-Man\"\r\n\t\t},\r\n\t\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Evangeline Lilly\", \r\n\t\t\t\"CharacterName\": \"Hope van Dyne\"\r\n\t\t},\r\n\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Bobby Cannavale\", \r\n\t\t\t\"CharacterName\": \"Paxton\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/movies",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Save_Movie1 (False: Title already exists)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhYThiMjAzNDc1ZGVhMDAwNDI2MDM1MCIsInVzZXJuYW1lIjoibmV3IiwiaWF0IjoxNTIxMDA1MTU0fQ.R35fPwCVKRJiHgoUQcHcWGZRKe2gffuTdjuViXd4NtA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\r\n\t\"title\": \"Ant-Man\",\r\n\t\"YearReleased\": 2018,\r\n\t\"genre\": \"Action\",\r\n\t\"actors\": \r\n\t[\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Chadwick Boseman\", \r\n\t\t\t\"CharacterName\": \"T'Challa/ Black Panther\"\r\n\t\t},\r\n\t\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Michael B. Jordan\", \r\n\t\t\t\"CharacterName\": \"Erik Killmonger\"\r\n\t\t},\r\n\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Lupita Nyong'o\", \r\n\t\t\t\"CharacterName\": \"Nakia\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/movies",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Save_Movie2 (Success)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhYThiMjAzNDc1ZGVhMDAwNDI2MDM1MCIsInVzZXJuYW1lIjoibmV3IiwiaWF0IjoxNTIxMDA1MTU0fQ.R35fPwCVKRJiHgoUQcHcWGZRKe2gffuTdjuViXd4NtA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\r\n\t\"title\": \"Black Panther\",\r\n\t\"YearReleased\": 2018,\r\n\t\"genre\": \"Action\",\r\n\t\"actors\": \r\n\t[\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Chadwick Boseman\", \r\n\t\t\t\"CharacterName\": \"T'Challa/ Black Panther\"\r\n\t\t},\r\n\t\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Michael B. Jordan\", \r\n\t\t\t\"CharacterName\": \"Erik Killmonger\"\r\n\t\t},\r\n\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Lupita Nyong'o\", \r\n\t\t\t\"CharacterName\": \"Nakia\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/movies",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Save_Movie3 (Success)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhYThiMjAzNDc1ZGVhMDAwNDI2MDM1MCIsInVzZXJuYW1lIjoibmV3IiwiaWF0IjoxNTIxMDA1MTU0fQ.R35fPwCVKRJiHgoUQcHcWGZRKe2gffuTdjuViXd4NtA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\r\n\t\"title\": \"Attack on Titan Crimson Bow and Arrow\",\r\n\t\"YearReleased\": 2014,\r\n\t\"genre\": \"action\",\r\n\t\"actors\": \r\n\t[\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Yuki Kaji\", \r\n\t\t\t\"CharacterName\": \"Eren Jaeger\"\r\n\t\t},\r\n\t\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Hiroshi Kamiya, \r\n\t\t\t\"CharacterName\": \"Levi Ackerman\"\r\n\t\t},\r\n\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Yui Ishikawa\", \r\n\t\t\t\"CharacterName\": \"Mikasa Ackerman\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/movies",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Save_Movie4 (Success)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhYThiMjAzNDc1ZGVhMDAwNDI2MDM1MCIsInVzZXJuYW1lIjoibmV3IiwiaWF0IjoxNTIxMDA1MTU0fQ.R35fPwCVKRJiHgoUQcHcWGZRKe2gffuTdjuViXd4NtA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\r\n\t\"title\": \"Attack on Titan Crimson Bow and Arrow\",\r\n\t\"YearReleased\": 2014,\r\n\t\"genre\": \"Action\",\r\n\t\"actors\": \r\n\t[\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Yuki Kaji\", \r\n\t\t\t\"CharacterName\": \"Eren Jaeger\"\r\n\t\t},\r\n\t\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Hiroshi Kamiya\", \r\n\t\t\t\"CharacterName\": \"Levi Ackerman\"\r\n\t\t},\r\n\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Yui Ishikawa\", \r\n\t\t\t\"CharacterName\": \"Mikasa Ackerman\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/movies",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Save_Movie5 (Success)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhYThiMjAzNDc1ZGVhMDAwNDI2MDM1MCIsInVzZXJuYW1lIjoibmV3IiwiaWF0IjoxNTIxMDA1MTU0fQ.R35fPwCVKRJiHgoUQcHcWGZRKe2gffuTdjuViXd4NtA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\r\n\t\"title\": \"Movie 5\",\r\n\t\"YearReleased\": 1998,\r\n\t\"genre\": \"Comedy\",\r\n\t\"actors\": \r\n\t[\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Actor 1\", \r\n\t\t\t\"CharacterName\": \"Char 1\"\r\n\t\t},\r\n\t\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Actor 2\", \r\n\t\t\t\"CharacterName\": \"Char 2\"\r\n\t\t},\r\n\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Actor 3\", \r\n\t\t\t\"CharacterName\": \"Char 3\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/movies",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update_Movie",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhYThiMjAzNDc1ZGVhMDAwNDI2MDM1MCIsInVzZXJuYW1lIjoibmV3IiwiaWF0IjoxNTIxMDA1MTU0fQ.R35fPwCVKRJiHgoUQcHcWGZRKe2gffuTdjuViXd4NtA"
+					},
+					{
+						"key": "id",
+						"value": "5aa8b602475dea000426035f"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\r\n\t\"title\": \"Updated Title\",\r\n\t\"YearReleased\": 1998,\r\n\t\"genre\": \"Comedy\",\r\n\t\"actors\": \r\n\t[\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Actor 1\", \r\n\t\t\t\"CharacterName\": \"Char 1\"\r\n\t\t},\r\n\t\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Actor 2\", \r\n\t\t\t\"CharacterName\": \"Char 2\"\r\n\t\t},\r\n\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Actor 3\", \r\n\t\t\t\"CharacterName\": \"Char 3\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/movies",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get_All_Movies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhYThiMjAzNDc1ZGVhMDAwNDI2MDM1MCIsInVzZXJuYW1lIjoibmV3IiwiaWF0IjoxNTIxMDA1MTU0fQ.R35fPwCVKRJiHgoUQcHcWGZRKe2gffuTdjuViXd4NtA"
+					},
+					{
+						"key": "id",
+						"value": "5aa8b602475dea000426035f"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\r\n\t\"title\": \"Updated Title\",\r\n\t\"YearReleased\": 1998,\r\n\t\"genre\": \"Comedy\",\r\n\t\"actors\": \r\n\t[\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Actor 1\", \r\n\t\t\t\"CharacterName\": \"Char 1\"\r\n\t\t},\r\n\t\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Actor 2\", \r\n\t\t\t\"CharacterName\": \"Char 2\"\r\n\t\t},\r\n\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Actor 3\", \r\n\t\t\t\"CharacterName\": \"Char 3\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/movies",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_Movie (Fail)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhYThiMjAzNDc1ZGVhMDAwNDI2MDM1MCIsInVzZXJuYW1lIjoibmV3IiwiaWF0IjoxNTIxMDA1MTU0fQ.R35fPwCVKRJiHgoUQcHcWGZRKe2gffuTdjuViXd4NtA"
+					},
+					{
+						"key": "id",
+						"value": "5aa8b534475dea000426"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\r\n\t\"title\": \"Updated Title\",\r\n\t\"YearReleased\": 1998,\r\n\t\"genre\": \"Comedy\",\r\n\t\"actors\": \r\n\t[\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Actor 1\", \r\n\t\t\t\"CharacterName\": \"Char 1\"\r\n\t\t},\r\n\t\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Actor 2\", \r\n\t\t\t\"CharacterName\": \"Char 2\"\r\n\t\t},\r\n\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Actor 3\", \r\n\t\t\t\"CharacterName\": \"Char 3\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/movies",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_Movie (Success)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhYThiMjAzNDc1ZGVhMDAwNDI2MDM1MCIsInVzZXJuYW1lIjoibmV3IiwiaWF0IjoxNTIxMDA1MTU0fQ.R35fPwCVKRJiHgoUQcHcWGZRKe2gffuTdjuViXd4NtA"
+					},
+					{
+						"key": "id",
+						"value": "5aa8b534475dea000426035d"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\r\n\t\"title\": \"Updated Title\",\r\n\t\"YearReleased\": 1998,\r\n\t\"genre\": \"Comedy\",\r\n\t\"actors\": \r\n\t[\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Actor 1\", \r\n\t\t\t\"CharacterName\": \"Char 1\"\r\n\t\t},\r\n\t\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Actor 2\", \r\n\t\t\t\"CharacterName\": \"Char 2\"\r\n\t\t},\r\n\t\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Actor 3\", \r\n\t\t\t\"CharacterName\": \"Char 3\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "https://perwaiz-api3.herokuapp.com/movies",
+					"protocol": "https",
+					"host": [
+						"perwaiz-api3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
