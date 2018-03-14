@@ -128,7 +128,7 @@ router.route('/movies')
         }
     })
 
-    .put( function (req, res) {
+    .put( authJwtController.isAuthenticated, function (req, res) {
         var id = req.headers.id;
         Movie.findOne({ _id: id}).exec(function(err, movie) {
             if (err) res.send(err);
@@ -147,7 +147,7 @@ router.route('/movies')
     })
 
 
-    .get( function (req, res) {
+    .get( authJwtController.isAuthenticated, function (req, res) {
         Movie.find(function (err, movies) {
             if (err)
                 res.send(err);
@@ -156,7 +156,7 @@ router.route('/movies')
         });
     })
 
-    .delete( function (req, res) {
+    .delete( authJwtController.isAuthenticated, function (req, res) {
         var id = req.headers.id;
         //var movieTitle = req.headers.title;
         Movie.remove({_id: id }, function(err, movie) {
