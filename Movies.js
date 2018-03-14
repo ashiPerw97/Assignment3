@@ -11,8 +11,8 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 var MovieSchema = new Schema({
     title: { type: String, required: true, index: { unique: true }},
     YearReleased: { type: String },
-    genre: { type: String, required: true, enum:['Action','Adventure','Comedy','Fantasy','Horror','Mystery','Thriller','Drama','Western']},
-    actors : { type : Array , "default" : [] }
+    genre: { type: String, required: true, enum:['action','adventure','comedy','fantasy','horror','mystery','thriller','drama','western']},
+    actors : { type : Array }
 });
 
 
