@@ -127,8 +127,8 @@ router.route('/movies')
     })
 
     .put( authJwtController.isAuthenticated, function (req, res) {
-        var movieID = req.headers.id;
-        Movie.findOne({ _id: movieId}).exec(function(err, movie) {
+        var id = req.headers.id;
+        Movie.findOne({ _id: id}).exec(function(err, movie) {
             if (err) res.send(err);
 
             movie.title = req.body.title;
@@ -137,7 +137,12 @@ router.route('/movies')
             movie.actors = req.body.actors;
 
             movie.save(function(err) {
-                if (err) res.send(err);
+                if (err) {
+                    if (err.code == 11000)
+                        return res.json({ success: false, message: 'A movie with that title already exists!'});
+                    else
+                        return res.send(err);
+                }
 
                 res.json({ message: 'Movie Successfully updated!' });
             });
@@ -155,9 +160,9 @@ router.route('/movies')
     })
 
     .delete( authJwtController.isAuthenticated, function (req, res) {
-        var movieID = req.headers.id;
+        var id = req.headers.id;
         //search title by movie id to delete
-        Movie.remove({_id: movieID }, function(err, movie) {
+        Movie.remove({_id: id }, function(err, movie) {
             if (err)
             {
                 res.json({msg: 'Movie could not be deleted!'});
