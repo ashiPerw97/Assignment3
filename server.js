@@ -4,7 +4,9 @@ var passport = require('passport');
 var authJwtController = require('./auth_jwt');
 var User = require('./Users');
 var Movie = require('./Movies');
+var Review = require('./Reviews');
 var jwt = require('jsonwebtoken');
+var async = require('async');
 //var dotenv = require('dotenv').config();
 
 var app = express();
@@ -151,27 +153,76 @@ router.route('/movies')
     })
 
 
-    .get( authJwtController.isAuthenticated, function (req, res) {
-        Movie.find(function (err, movies) {
+    .get(authJwtController.isAuthenticated, function (req, res) {
+            if (true) {
+                Movie.aggregate([
+                    {
+                        $lookup:{
+                            from: "reviews",
+                            localField: "title",
+                            foreignField: "movieTitle",
+                            as: 'review'
+                        }
+                    }
+                ], function (err, result) {
+                    if(err) {res.send(err);}
+                    else res.send({Movie: result});
+                });
+            }else {
+                Movie.find({}, function (err, movies) {
+                    if(err) {res.send(err);}
+                    //res.json({Movie: movies});
+                })
+            }
+    });
+
+
+router.route('/reviews')
+    .post (authJwtController.isAuthenticated, function (req, res) {
+        if (!req.body.reviewer || !req.body.quote || !req.body.rating || !req.body.movieTitle) {
+            res.json({success: false, msg: 'Please pass reviewer, quote, rating, and movie title.'});
+        }
+        else
+        {
+            var title = req.headers.title;
+            Movie.findOne({ title: req.body.movieTitle }).select('title').exec(function (err, movie){
+                if (err) return res.send(err);
+
+                if(movie){
+                    var review = new Review (req.body);
+
+                    review.save(function(err){
+                        if(err){
+                            return res.send(err);
+                        }
+                        res.json({message: 'Review successfully saved!'});
+
+                    });
+                }
+                else{
+                    res.json({success: false, message: 'Movie title does not exist in database!'});
+                }
+            });
+
+         /*var review = new Review(req, res);
+         review.reviewer = req.body.reviewer;
+         review.quote = req.body.quote;
+         review.rating = req.body.rating;
+         review.movieTitle = req.body.movieTitle; */
+
+        }
+
+    })
+
+    .get (authJwtController.isAuthenticated, function (req, res){
+        Review.find(function (err, reviews) {
             if (err)
                 res.send(err);
 
-            res.json(movies);
+            res.json(reviews);
         });
-    })
 
-    .delete( authJwtController.isAuthenticated, function (req, res) {
-        var id = req.headers.id;
-        //search title by movie id to delete
-        Movie.remove({_id: id }, function(err, movie) {
-            if (err)
-            {
-                res.json({msg: 'Movie could not be deleted!'});
-            }
-            res.json({ msg: 'Movie successfully deleted!' });
-        });
     });
-
 
 app.use('/', router);
 app.listen(process.env.PORT || 8080);
